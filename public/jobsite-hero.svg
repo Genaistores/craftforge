@@ -1,0 +1,40 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g0" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F97316" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#94A3B8" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <!-- faint job-site illustration: van, hard hat, tools -->
+  <rect width="1600" height="900" fill="url(#g0)"/>
+
+  <!-- van -->
+  <path d="M240 520C260 430 330 360 420 360H980C1080 360 1160 430 1175 520L1200 600H230L240 520Z" fill="#0B1224" fill-opacity="0.55" stroke="#E2E8F0" stroke-opacity="0.15" stroke-width="6"/>
+  <path d="M420 360L460 300H930L965 360" fill="#F97316" fill-opacity="0.18" stroke="#F97316" stroke-opacity="0.5" stroke-width="6"/>
+  <path d="M365 595H1185" stroke="#E2E8F0" stroke-opacity="0.12" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="420" cy="645" r="75" fill="#0F172A" fill-opacity="0.85" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="8"/>
+  <circle cx="1040" cy="645" r="75" fill="#0F172A" fill-opacity="0.85" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="8"/>
+
+  <!-- hard hat -->
+  <path d="M770 245C770 210 798 182 833 182H905C940 182 968 210 968 245V280C968 315 940 343 905 343H833C798 343 770 315 770 280V245Z" fill="#0B1224" fill-opacity="0.7" stroke="#F97316" stroke-opacity="0.55" stroke-width="6"/>
+  <path d="M760 285H980" stroke="#F97316" stroke-opacity="0.45" stroke-width="10" stroke-linecap="round"/>
+  <path d="M825 192V343" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- tools -->
+  <path d="M1150 410L1240 500" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1230 420L1320 510" stroke="#F97316" stroke-opacity="0.28" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1090 470L1170 390" stroke="#F97316" stroke-opacity="0.26" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1040 520L1110 450" stroke="#E2E8F0" stroke-opacity="0.14" stroke-width="10" stroke-linecap="round"/>
+  <path d="M500 410L590 500" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round"/>
+  <path d="M450 470L530 390" stroke="#F97316" stroke-opacity="0.26" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- subtle grid lines -->
+  <g opacity="0.12">
+    <path d="M0 760H1600" stroke="#94A3B8" stroke-width="2"/>
+    <path d="M0 640H1600" stroke="#94A3B8" stroke-width="2"/>
+    <path d="M0 520H1600" stroke="#94A3B8" stroke-width="2"/>
+    <path d="M0 400H1600" stroke="#94A3B8" stroke-width="2"/>
+  </g>
+</svg>
+
