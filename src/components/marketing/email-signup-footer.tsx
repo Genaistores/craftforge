@@ -29,15 +29,15 @@ export function EmailSignupFooter() {
               className="h-10 bg-craftOrange text-white hover:bg-craftOrange/90"
               disabled={!email.trim()}
             >
-              Get My Free Audit
+              Get My Free Profit Potential
             </Button>
           }
         />
       </div>
 
       <p className="mt-2 text-xs text-slate-400">
-        Enter your email to request the free audit playbook. We’ll send next
-        steps by email. No spam.
+        Enter your email to request your free Untapped Profit Potential
+        report. We’ll email it to you. No spam.
       </p>
     </div>
   );

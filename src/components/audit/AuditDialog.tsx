@@ -20,14 +20,16 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 
-const auditSchema = z.object({
+const profitPotentialSchema = z.object({
+  trade: z.string().min(1, "Trade is required"),
+  serviceArea: z.string().min(1, "City/area is required"),
   email: z
     .string()
     .min(1, "Email is required")
     .email("Enter a valid email address")
 });
 
-type AuditFormValues = z.infer<typeof auditSchema>;
+type ProfitPotentialFormValues = z.infer<typeof profitPotentialSchema>;
 
 export function AuditDialog({
   trigger,
@@ -41,18 +43,26 @@ export function AuditDialog({
     "idle" | "submitting" | "submitted"
   >("idle");
 
-  const form = useForm<AuditFormValues>({
-    resolver: zodResolver(auditSchema),
-    defaultValues: { email: defaultEmail ?? "" }
+  const form = useForm<ProfitPotentialFormValues>({
+    resolver: zodResolver(profitPotentialSchema),
+    defaultValues: {
+      trade: "",
+      serviceArea: "",
+      email: defaultEmail ?? ""
+    }
   });
 
   React.useEffect(() => {
     if (!open) return;
     setStatus("idle");
-    form.reset({ email: defaultEmail ?? "" });
+    form.reset({
+      trade: "",
+      serviceArea: "",
+      email: defaultEmail ?? ""
+    });
   }, [defaultEmail, form, open]);
 
-  async function onSubmit(values: AuditFormValues) {
+  async function onSubmit(values: ProfitPotentialFormValues) {
     setStatus("submitting");
 
     // Placeholder for production backend/API integration.
@@ -60,7 +70,7 @@ export function AuditDialog({
     await new Promise((r) => setTimeout(r, 750));
 
     setStatus("submitted");
-    form.reset({ email: values.email });
+    form.reset(values);
   }
 
   return (
@@ -69,9 +79,11 @@ export function AuditDialog({
 
       <DialogContent className="max-w-xl">
         <DialogHeader>
-          <DialogTitle>Get My Free Audit</DialogTitle>
+          <DialogTitle>Get My Free Profit Potential</DialogTitle>
           <DialogDescription>
-            Tell us where to send the audit playbook. We’ll follow up by email.
+            Tell us a few quick details and we’ll email your Untapped Profit
+            Potential report. No uploads. No spreadsheets. Takes under 60
+            seconds.
           </DialogDescription>
         </DialogHeader>
 
@@ -81,9 +93,53 @@ export function AuditDialog({
             className="space-y-4"
           >
             <div className="space-y-2">
-              <Label htmlFor="audit-email">Email</Label>
+              <Label htmlFor="profit-trade">Trade</Label>
               <Input
-                id="audit-email"
+                id="profit-trade"
+                placeholder="e.g., Plumbing, Electrical, HVAC"
+                autoComplete="off"
+                {...form.register("trade")}
+                aria-invalid={Boolean(form.formState.errors.trade)}
+              />
+              {form.formState.errors.trade ? (
+                <p
+                  className={cn(
+                    "text-sm text-orange-300",
+                    "animate-in fade-in-0 duration-200"
+                  )}
+                  role="alert"
+                >
+                  {form.formState.errors.trade.message}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="profit-area">City / Service Area</Label>
+              <Input
+                id="profit-area"
+                placeholder="e.g., Austin, TX"
+                autoComplete="off"
+                {...form.register("serviceArea")}
+                aria-invalid={Boolean(form.formState.errors.serviceArea)}
+              />
+              {form.formState.errors.serviceArea ? (
+                <p
+                  className={cn(
+                    "text-sm text-orange-300",
+                    "animate-in fade-in-0 duration-200"
+                  )}
+                  role="alert"
+                >
+                  {form.formState.errors.serviceArea.message}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="profit-email">Email</Label>
+              <Input
+                id="profit-email"
                 type="email"
                 placeholder="you@company.com"
                 autoComplete="email"
@@ -109,7 +165,9 @@ export function AuditDialog({
                 disabled={status === "submitting"}
                 className="min-w-[160px]"
               >
-                {status === "submitting" ? "Sending..." : "Send My Audit"}
+                {status === "submitting"
+                  ? "Sending..."
+                  : "Get My Free Profit Potential"}
               </Button>
               <DialogClose asChild>
                 <Button type="button" variant="secondary">
@@ -119,15 +177,14 @@ export function AuditDialog({
             </DialogFooter>
 
             <p className="text-xs text-slate-400">
-              By requesting an audit, you agree to receive a single email with
-              next steps. No spam.
+              We’ll send one email with your report. No spam.
             </p>
           </form>
         ) : (
           <div className="space-y-4">
             <div className="rounded-lg border border-white/10 bg-white/5 p-4">
               <p className="text-sm text-slate-300">
-                Audit request received. We’ll email your playbook to{" "}
+                You’re in. We’ll email your Untapped Profit Potential report to{" "}
                 <span className="font-semibold text-slate-100">
                   {form.getValues("email")}
                 </span>
@@ -142,8 +199,8 @@ export function AuditDialog({
             </DialogFooter>
 
             <p className="text-xs text-slate-400">
-              Want faster results? You can run weekly optimizations once we
-              have your setup.
+              Your frontier experts do all the thinking so you can stay focused
+              on your craft.
             </p>
           </div>
         )}

@@ -17,14 +17,31 @@ export const metadata: Metadata = {
     template: "%s | CraftForge"
   },
   description:
-    "Your Craft. Your Control. CraftForge is the agentic AI co-pilot built for independent tradesmen to automate business-side decisions: cost control, vendor optimization, digital footprint optimization, and new revenue streams.",
+    "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. See your Untapped Profit Potential in under 60 seconds.",
+  applicationName: "CraftForge",
+  category: "Business Services",
+  keywords: [
+    "CraftForge",
+    "Genaistores LLC",
+    "tradesmen business support",
+    "untapped profit potential",
+    "contractor growth",
+    "small business optimization"
+  ],
+  authors: [{ name: "Genaistores LLC", url: "https://genaistores.com" }],
+  creator: "Genaistores LLC",
+  publisher: "Genaistores LLC",
+  robots: {
+    index: true,
+    follow: true
+  },
   alternates: {
     canonical: "https://genaistores.com/"
   },
   openGraph: {
     title: "CraftForge by Genaistores LLC",
     description:
-      "An agentic AI co-pilot built for independent tradesmen to optimize the business side of the operation automatically.",
+      "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. See your Untapped Profit Potential in under 60 seconds.",
     url: "https://genaistores.com",
     siteName: "CraftForge",
     locale: "en_US",
@@ -42,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CraftForge by Genaistores LLC",
     description:
-      "Automate cost control, vendor optimization, and digital footprint optimization for independent tradesmen."
+      "Your frontier experts handle business admin so tradesmen stay focused on their craft. See your Untapped Profit Potential in under 60 seconds."
   }
 };
 

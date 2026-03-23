@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0F172A]/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0F172A]/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-3">
           <Link href="/" className="group flex items-center gap-3">
@@ -22,7 +22,7 @@ export function Navbar() {
               <span className="block text-base font-semibold text-slate-100">
                 CraftForge
               </span>
-              <span className="block text-[11px] font-medium text-slate-400">
+              <span className="block text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
                 by Genaistores
               </span>
             </span>
@@ -32,8 +32,8 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <AuditDialog
             trigger={
-              <Button className="h-10 bg-craftOrange text-white hover:bg-craftOrange/90">
-                Get My Free Audit
+              <Button className="h-10 bg-craftOrange px-5 text-white hover:bg-craftOrange/90">
+                Get My Free Profit Potential
               </Button>
             }
           />
