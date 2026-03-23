@@ -23,14 +23,13 @@ export function Hero() {
             Frontier Experts For Tradesmen
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl">
-            Your Craft. Zero Headaches.
+            Your Craft. Finally Free.
           </h1>
 
           <p className="mt-5 text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
-            Max, Gauge, and Atlas — your frontier experts — quietly run the
-            entire business side so you can stay completely focused on your
-            craft. See your Untapped Profit Potential in under 60 seconds —
-            with almost zero effort from you.
+            Max, Gauge, and Atlas handle the business side so you can stay
+            completely focused on your craft. See your Untapped Profit
+            Potential with almost zero effort.
           </p>
 
           <div className="mt-7">
@@ -45,7 +44,7 @@ export function Hero() {
               }
             />
             <p className="mt-4 text-sm text-slate-400">
-              Takes under 60 seconds. No spreadsheets. No complicated uploads.
+              No uploads. No spreadsheets. No hassle.
             </p>
           </div>
         </div>
