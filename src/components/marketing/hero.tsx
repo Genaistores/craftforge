@@ -19,7 +19,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:pb-24 lg:pt-24">
         <div className="max-w-3xl">
-          <p className="inline-flex items-center rounded-full border border-craftOrange/40 bg-craftOrange/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-300">
+          <p className="mb-6 inline-flex items-center rounded-full border border-craftOrange/40 bg-craftOrange/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-300 sm:mb-8">
             Frontier Experts For Tradesmen
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl">
