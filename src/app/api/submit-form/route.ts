@@ -28,7 +28,6 @@ function buildEmailHtml(data: SubmitFormBody): string {
   const label = `display:block;color:#475569;font-family:${FONT};font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px;`;
   const value = `color:#F1F5F9;font-family:${FONT};font-size:15px;font-weight:500;line-height:1.4;`;
   const sectionHeading = `margin:0 0 16px;color:#475569;font-family:${FONT};font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;`;
-  const bodyText = `margin:0;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;`;
 
   return `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -125,10 +124,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <!-- Trade -->
                       <tr>
                         <td style="padding:24px 28px 22px 28px;">
-                          <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="padding:0 0 4px 0;${label}">Trade</td></tr>
-                            <tr><td style="padding:0;${value}">${tradeName}</td></tr>
-                          </table>
+                          <span style="${label}">Trade</span>
+                          <span style="${value}">${tradeName}</span>
                         </td>
                       </tr>
 
@@ -143,10 +140,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <!-- Service Area -->
                       <tr>
                         <td style="padding:22px 28px;">
-                          <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="padding:0 0 4px 0;${label}">City / Service Area</td></tr>
-                            <tr><td style="padding:0;${value}">${data.serviceArea}</td></tr>
-                          </table>
+                          <span style="${label}">City / Service Area</span>
+                          <span style="${value}">${data.serviceArea}</span>
                         </td>
                       </tr>
 
@@ -161,10 +156,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <!-- Monthly Revenue -->
                       <tr>
                         <td style="padding:22px 28px 24px 28px;">
-                          <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="padding:0 0 4px 0;${label}">Rough Monthly Revenue</td></tr>
-                            <tr><td style="padding:0;${value}">${data.monthlyRevenue}</td></tr>
-                          </table>
+                          <span style="${label}">Rough Monthly Revenue</span>
+                          <span style="${value}">${data.monthlyRevenue}</span>
                         </td>
                       </tr>
 
