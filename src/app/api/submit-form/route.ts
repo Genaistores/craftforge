@@ -83,40 +83,20 @@ function buildEmailHtml(data: SubmitFormBody): string {
 
           <!-- ══ MAIN CARD ═════════════════════════════════════════════════ -->
           <tr>
-            <td style="background-color:#111C32;border-radius:20px;border:1px solid rgba(255,255,255,0.07);">
+            <td style="background-color:#111C32;border-radius:20px;border:1px solid rgba(255,255,255,0.06);">
 
-              <!-- Orange top stripe -->
+              <!-- ── HEADER ────────────────────────────────────────────── -->
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                  <td height="5"
-                      style="height:5px;background:linear-gradient(90deg,#F97316 0%,#FB923C 100%);border-radius:20px 20px 0 0;font-size:0;line-height:0;">&nbsp;</td>
-                </tr>
-              </table>
-
-              <!-- ── HEADER BLOCK ────────────────────────────────────────── -->
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td style="padding:44px 44px 0 44px;">
-
-                    <!-- Pill badge -->
-                    <table cellpadding="0" cellspacing="0" role="presentation"
-                           style="margin-bottom:30px;">
-                      <tr>
-                        <td style="background-color:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.28);border-radius:100px;padding:5px 14px;white-space:nowrap;">
-                          <span style="color:#FB923C;font-family:${FONT};font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">
-                            Frontier Expert &nbsp;·&nbsp; Discovery
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td style="padding:48px 48px 0 48px;">
 
                     <!-- Headline -->
-                    <h1 style="margin:0 0 20px;color:#F8FAFC;font-family:${FONT};font-size:26px;font-weight:700;line-height:1.25;letter-spacing:-0.02em;">
+                    <h1 style="margin:0 0 24px;color:#F8FAFC;font-family:${FONT};font-size:26px;font-weight:700;line-height:1.3;letter-spacing:-0.02em;">
                       Hey — Max here.
                     </h1>
 
-                    <!-- Intro copy -->
-                    <p style="margin:0 0 40px;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;">
+                    <!-- Body -->
+                    <p style="margin:0;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.8;">
                       I've got your info. Our team is already analyzing
                       everything. You'll receive your personalized
                       <strong style="color:#F97316;">CraftForge Blueprint</strong>
@@ -127,50 +107,56 @@ function buildEmailHtml(data: SubmitFormBody): string {
                 </tr>
               </table>
 
-              <!-- ── WHAT YOU TOLD ME ────────────────────────────────────── -->
+              <!-- Spacer -->
+              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                <tr><td style="height:40px;font-size:0;line-height:0;">&nbsp;</td></tr>
+              </table>
+
+              <!-- ── WHAT YOU TOLD ME ───────────────────────────────────── -->
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                  <td style="padding:0 44px 40px 44px;">
+                  <td style="padding:0 48px 48px 48px;">
 
                     <p style="${sectionHeading}">What you told me</p>
 
-                    <!-- Details card -->
                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation"
-                           style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+                           style="border:1px solid rgba(255,255,255,0.04);border-radius:14px;">
 
                       <!-- Trade -->
                       <tr>
-                        <td style="padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);background-color:rgba(249,115,22,0.05);">
+                        <td style="padding:24px 28px 22px 28px;">
+                          <span style="${label}">Trade</span>
+                          <span style="${value}">${tradeName}</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td style="padding:0 28px;">
                           <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                              <td>
-                                <span style="${label}">Trade</span>
-                                <span style="${value}">${tradeName}</span>
-                              </td>
-                              <td align="right" valign="middle">
-                                <table cellpadding="0" cellspacing="0" role="presentation">
-                                  <tr>
-                                    <td width="8" height="8"
-                                        style="width:8px;height:8px;background-color:#F97316;border-radius:50%;"></td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
+                            <tr><td style="height:1px;background-color:rgba(255,255,255,0.035);font-size:0;line-height:0;">&nbsp;</td></tr>
                           </table>
                         </td>
                       </tr>
 
                       <!-- Service Area -->
                       <tr>
-                        <td style="padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);background-color:rgba(255,255,255,0.02);">
+                        <td style="padding:22px 28px;">
                           <span style="${label}">City / Service Area</span>
                           <span style="${value}">${data.serviceArea}</span>
                         </td>
                       </tr>
 
+                      <tr>
+                        <td style="padding:0 28px;">
+                          <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr><td style="height:1px;background-color:rgba(255,255,255,0.035);font-size:0;line-height:0;">&nbsp;</td></tr>
+                          </table>
+                        </td>
+                      </tr>
+
                       <!-- Monthly Revenue -->
                       <tr>
-                        <td style="padding:18px 22px;background-color:rgba(255,255,255,0.02);">
+                        <td style="padding:22px 28px 24px 28px;">
                           <span style="${label}">Rough Monthly Revenue</span>
                           <span style="${value}">${data.monthlyRevenue}</span>
                         </td>
@@ -181,50 +167,26 @@ function buildEmailHtml(data: SubmitFormBody): string {
                 </tr>
               </table>
 
-              <!-- Divider -->
+              <!-- ── SIGNATURE ─────────────────────────────────────────── -->
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                  <td style="padding:0 44px;">
+                  <td style="padding:0 48px 48px 48px;">
                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                       <tr>
-                        <td height="1" style="height:1px;background-color:rgba(255,255,255,0.07);font-size:0;line-height:0;">&nbsp;</td>
+                        <td style="height:1px;background-color:rgba(255,255,255,0.05);font-size:0;line-height:0;">&nbsp;</td>
                       </tr>
                     </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- ── WHAT HAPPENS NEXT ───────────────────────────────────── -->
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td style="padding:40px 44px 0 44px;">
-
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Divider -->
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td style="padding:0 44px;">
                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                       <tr>
-                        <td height="1" style="height:1px;background-color:rgba(255,255,255,0.07);font-size:0;line-height:0;">&nbsp;</td>
+                        <td style="padding-top:32px;">
+                          <p style="margin:0 0 4px;color:#64748B;font-family:${FONT};font-size:14px;line-height:1.6;">Talk soon,</p>
+                          <p style="margin:0 0 4px;color:#F1F5F9;font-family:${FONT};font-size:20px;font-weight:700;letter-spacing:-0.01em;">Max</p>
+                          <p style="margin:0;color:#475569;font-family:${FONT};font-size:13px;">
+                            Discovery Expert &nbsp;&middot;&nbsp; CraftForge
+                          </p>
+                        </td>
                       </tr>
                     </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- ── SIGNATURE ───────────────────────────────────────────── -->
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td style="padding:32px 44px 48px 44px;">
-                    <p style="margin:0 0 3px;color:#64748B;font-family:${FONT};font-size:14px;line-height:1.6;">Talk soon,</p>
-                    <p style="margin:0 0 3px;color:#F1F5F9;font-family:${FONT};font-size:20px;font-weight:700;letter-spacing:-0.01em;">Max</p>
-                    <p style="margin:0;color:#475569;font-family:${FONT};font-size:13px;">
-                      Discovery Expert &nbsp;&middot;&nbsp; CraftForge
-                    </p>
                   </td>
                 </tr>
               </table>
