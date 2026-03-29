@@ -29,17 +29,16 @@ export function EmailSignupFooter() {
               className="h-10 bg-craftOrange text-white hover:bg-craftOrange/90"
               disabled={!email.trim()}
             >
-              Get My Free Profit Potential
+              Get My Free Blueprint
             </Button>
           }
         />
       </div>
 
       <p className="mt-2 text-xs text-slate-400">
-        Enter your email to request your free Untapped Profit Potential
-        report. We’ll email it to you. No spam.
+        Enter your email to request your free CraftForge Blueprint.
+        We&apos;ll email it to you. No spam.
       </p>
     </div>
   );
 }
-

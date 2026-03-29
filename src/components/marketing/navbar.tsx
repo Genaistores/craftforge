@@ -33,7 +33,7 @@ export function Navbar() {
           <AuditDialog
             trigger={
               <Button className="h-10 bg-craftOrange px-5 text-white hover:bg-craftOrange/90">
-                Get My Free Profit Potential
+                Get My Free Blueprint
               </Button>
             }
           />

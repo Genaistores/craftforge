@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     template: "%s | CraftForge"
   },
   description:
-    "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. See your Untapped Profit Potential in under 60 seconds.",
+    "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. Get your free CraftForge Blueprint in under 60 seconds.",
   applicationName: "CraftForge",
   category: "Business Services",
   keywords: [
     "CraftForge",
     "Genaistores LLC",
     "tradesmen business support",
-    "untapped profit potential",
+    "CraftForge Blueprint",
     "contractor growth",
     "small business optimization"
   ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CraftForge by Genaistores LLC",
     description:
-      "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. See your Untapped Profit Potential in under 60 seconds.",
+      "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. Get your free CraftForge Blueprint in under 60 seconds.",
     url: "https://genaistores.com",
     siteName: "CraftForge",
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CraftForge by Genaistores LLC",
     description:
-      "Your frontier experts handle business admin so tradesmen stay focused on their craft. See your Untapped Profit Potential in under 60 seconds."
+      "Your frontier experts handle business admin so tradesmen stay focused on their craft. Get your free CraftForge Blueprint in under 60 seconds."
   }
 };
 

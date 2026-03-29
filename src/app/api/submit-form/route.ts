@@ -36,14 +36,14 @@ function buildEmailHtml(data: SubmitFormBody): string {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Max here — Your Untapped Profit Potential report is incoming</title>
+  <title>Max here — Your CraftForge Blueprint is incoming</title>
 </head>
 <body style="margin:0;padding:0;background-color:#09111F;">
 
   <!--[if !mso]><!-->
   <!-- Preheader (hidden preview text) -->
   <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;color:#09111F;">
-    Gauge is already pulling real market data for ${data.serviceArea}. Your Untapped Profit Potential report is incoming.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+    Gauge is already pulling real market data for ${data.serviceArea}. Your CraftForge Blueprint is incoming.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
   </div>
   <!--<![endif]-->
 
@@ -126,7 +126,7 @@ function buildEmailHtml(data: SubmitFormBody): string {
                     </p>
                     <p style="margin:0 0 40px;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;">
                       Your personalized
-                      <strong style="color:#F97316;">Untapped Profit Potential report</strong>
+                      <strong style="color:#F97316;">CraftForge Blueprint</strong>
                       will be in your inbox very soon. You're in good hands
                       with the whole crew.
                     </p>
@@ -244,8 +244,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
           <tr>
             <td style="padding-top:36px;text-align:center;">
               <p style="margin:0 0 6px;color:#1E293B;font-family:${FONT};font-size:12px;line-height:1.7;">
-                You're receiving this because you requested a free Untapped Profit
-                Potential report from CraftForge.
+                You're receiving this because you requested a free CraftForge
+                Blueprint.
               </p>
               <p style="margin:0;color:#1E293B;font-family:${FONT};font-size:12px;">
                 <a href="https://genaistores.com"

@@ -374,7 +374,7 @@ export function AuditDialog({
                     Sending…
                   </span>
                 ) : (
-                  "Get My Free Profit Potential"
+                  "Get My Free Blueprint"
                 )}
               </Button>
             </DialogFooter>
@@ -411,8 +411,8 @@ export function AuditDialog({
             {/* Body */}
             <p className="mb-4 text-lg leading-relaxed text-slate-300 sm:text-xl">
               I&apos;ve got your info. Our team is already analyzing everything.
-              You&apos;ll receive your personalized Untapped Profit Potential
-              report very soon. You&apos;re in good hands.
+              You&apos;ll receive your personalized CraftForge Blueprint very
+              soon. You&apos;re in good hands.
             </p>
 
             {/* Crew line */}
