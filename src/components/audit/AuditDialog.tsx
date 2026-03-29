@@ -96,6 +96,7 @@ export function AuditDialog({
   const [open, setOpen] = React.useState(false);
   const [status, setStatus] = React.useState<"idle" | "submitting">("idle");
   const [showSuccess, setShowSuccess] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   const form = useForm<ProfitPotentialFormValues>({
     resolver: zodResolver(profitPotentialSchema),
@@ -114,6 +115,7 @@ export function AuditDialog({
   React.useEffect(() => {
     if (!open) return;
     setStatus("idle");
+    setSubmitError(null);
     form.reset({
       trade: "",
       tradeOther: "",
@@ -125,12 +127,35 @@ export function AuditDialog({
 
   async function onSubmit(values: ProfitPotentialFormValues) {
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 750));
-    console.log("[CraftForge] Intake form submitted:", values);
-    setOpen(false);
-    setShowSuccess(true);
-    form.reset();
-    setStatus("idle");
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values)
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        const msg = json?.error ?? "Something went wrong. Please try again.";
+        console.error("[CraftForge] Submission error:", msg);
+        setSubmitError(msg);
+        setStatus("idle");
+        return;
+      }
+
+      console.log("[CraftForge] Submission successful:", json);
+      setOpen(false);
+      setShowSuccess(true);
+      form.reset();
+    } catch (err) {
+      console.error("[CraftForge] Network error:", err);
+      setSubmitError("Network error — please check your connection and try again.");
+    } finally {
+      setStatus("idle");
+    }
   }
 
   return (
@@ -325,6 +350,15 @@ export function AuditDialog({
               )}
             </div>
 
+            {submitError && (
+              <p
+                className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300"
+                role="alert"
+              >
+                {submitError}
+              </p>
+            )}
+
             <DialogFooter className="pt-2 sm:justify-stretch">
               <Button
                 type="submit"
@@ -371,14 +405,14 @@ export function AuditDialog({
               id="success-heading"
               className="mb-5 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl"
             >
-              Thanks! Max just received this.
+              Thanks — Max here.
             </h2>
 
             {/* Body */}
             <p className="mb-4 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              He&apos;s already handing everything off to Gauge. You&apos;ll
-              receive your personalized Untapped Profit Potential report very
-              soon.
+              I&apos;ve got your info. Our team is already analyzing everything.
+              You&apos;ll receive your personalized Untapped Profit Potential
+              report very soon. You&apos;re in good hands.
             </p>
 
             {/* Crew line */}
