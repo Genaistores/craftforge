@@ -43,7 +43,7 @@ function buildEmailHtml(data: SubmitFormBody): string {
   <!--[if !mso]><!-->
   <!-- Preheader (hidden preview text) -->
   <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;color:#09111F;">
-    Gauge is already pulling real market data for ${data.serviceArea}. Your CraftForge Blueprint is incoming.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+    I've got your info. Our team is already analyzing everything. You'll receive your personalized CraftForge Blueprint very soon.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
   </div>
   <!--<![endif]-->
 
@@ -282,7 +282,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: "Max <max@craftforge.genaistores.com>",
       to: [email],
-      subject: "Max here — I've got your info and Gauge is already on it",
+      subject: "Max here — I've got your info.",
       html: buildEmailHtml(body)
     });
 
