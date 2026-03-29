@@ -126,8 +126,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <tr>
                         <td style="padding:24px 28px 22px 28px;">
                           <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="${label}">Trade</td></tr>
-                            <tr><td style="${value}">${tradeName}</td></tr>
+                            <tr><td style="padding:0 0 4px 0;${label}">Trade</td></tr>
+                            <tr><td style="padding:0;${value}">${tradeName}</td></tr>
                           </table>
                         </td>
                       </tr>
@@ -144,8 +144,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <tr>
                         <td style="padding:22px 28px;">
                           <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="${label}">City / Service Area</td></tr>
-                            <tr><td style="${value}">${data.serviceArea}</td></tr>
+                            <tr><td style="padding:0 0 4px 0;${label}">City / Service Area</td></tr>
+                            <tr><td style="padding:0;${value}">${data.serviceArea}</td></tr>
                           </table>
                         </td>
                       </tr>
@@ -162,8 +162,8 @@ function buildEmailHtml(data: SubmitFormBody): string {
                       <tr>
                         <td style="padding:22px 28px 24px 28px;">
                           <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr><td style="${label}">Rough Monthly Revenue</td></tr>
-                            <tr><td style="${value}">${data.monthlyRevenue}</td></tr>
+                            <tr><td style="padding:0 0 4px 0;${label}">Rough Monthly Revenue</td></tr>
+                            <tr><td style="padding:0;${value}">${data.monthlyRevenue}</td></tr>
                           </table>
                         </td>
                       </tr>
