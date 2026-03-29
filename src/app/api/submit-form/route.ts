@@ -116,19 +116,11 @@ function buildEmailHtml(data: SubmitFormBody): string {
                     </h1>
 
                     <!-- Intro copy -->
-                    <p style="margin:0 0 16px;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;">
-                      Thanks for sharing a bit about your operation.
-                    </p>
-                    <p style="margin:0 0 16px;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;">
-                      I'm personally handing your info off to Gauge — our
-                      sharpest analyst. He's already pulling real local market
-                      data for your area and building your report.
-                    </p>
                     <p style="margin:0 0 40px;color:#94A3B8;font-family:${FONT};font-size:15px;line-height:1.75;">
-                      Your personalized
+                      I've got your info. Our team is already analyzing
+                      everything. You'll receive your personalized
                       <strong style="color:#F97316;">CraftForge Blueprint</strong>
-                      will be in your inbox very soon. You're in good hands
-                      with the whole crew.
+                      very soon. You're in good hands with the whole crew.
                     </p>
 
                   </td>
