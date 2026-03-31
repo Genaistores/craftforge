@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | CraftForge"
   },
   description:
-    "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. Get your free CraftForge Blueprint in under 60 seconds.",
+    "CraftForge by Genaistores LLC \u2014 Two teams. One crew. The Scouts find the money. The Titans run and grow the business side automatically. You manage your digital crew from the dashboard and stay focused on your craft.",
   applicationName: "CraftForge",
   category: "Business Services",
   keywords: [
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     "tradesmen business support",
     "CraftForge Blueprint",
     "contractor growth",
-    "small business optimization"
+    "small business optimization",
+    "digital crew for tradesmen"
   ],
   authors: [{ name: "Genaistores LLC", url: "https://genaistores.com" }],
   creator: "Genaistores LLC",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CraftForge by Genaistores LLC",
     description:
-      "CraftForge by Genaistores LLC is where Max, Gauge, and Atlas — your frontier experts — quietly handle all the business admin so independent tradesmen can stay completely focused on their craft and never have to think about computers again. Get your free CraftForge Blueprint in under 60 seconds.",
+      "Two teams. One crew. The Scouts find the money. The Titans run the business side automatically. Get your free CraftForge Blueprint in 30 seconds.",
     url: "https://genaistores.com",
     siteName: "CraftForge",
     locale: "en_US",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CraftForge by Genaistores LLC",
     description:
-      "Your frontier experts handle business admin so tradesmen stay focused on their craft. Get your free CraftForge Blueprint in under 60 seconds."
+      "Two teams. One crew. The Scouts find the money. The Titans run the business side. Get your free CraftForge Blueprint in 30 seconds."
   }
 };
 
@@ -75,7 +76,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         {children}
         <div className="sr-only">
-          <Link href="https://genaistores.com" aria-label="Go to genaistores.com">
+          <Link
+            href="https://genaistores.com"
+            aria-label="Go to genaistores.com"
+          >
             genaistores.com
           </Link>
         </div>
@@ -83,4 +87,3 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-

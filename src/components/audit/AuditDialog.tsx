@@ -23,6 +23,8 @@ import { cn } from "@/lib/utils";
 
 /* ─── Constants ─────────────────────────────────────────────────────────── */
 
+const SCOUT_NAMES = ["Riley", "Jax", "Blake"] as const;
+
 const TRADE_OPTIONS = [
   "Electrician",
   "Plumber",
@@ -37,9 +39,9 @@ const TRADE_OPTIONS = [
 
 const REVENUE_OPTIONS = [
   "Under $10k",
-  "$10k – $25k",
-  "$25k – $50k",
-  "$50k – $100k",
+  "$10k \u2013 $25k",
+  "$25k \u2013 $50k",
+  "$50k \u2013 $100k",
   "Over $100k"
 ] as const;
 
@@ -52,7 +54,7 @@ const selectClassName = cn(
 
 /* ─── Schema ─────────────────────────────────────────────────────────────── */
 
-const profitPotentialSchema = z
+const intakeSchema = z
   .object({
     trade: z.string().min(1, "Select your trade"),
     tradeOther: z.string().optional(),
@@ -76,7 +78,7 @@ const profitPotentialSchema = z
     }
   });
 
-type ProfitPotentialFormValues = {
+type IntakeFormValues = {
   trade: string;
   tradeOther?: string;
   serviceArea: string;
@@ -97,9 +99,10 @@ export function AuditDialog({
   const [status, setStatus] = React.useState<"idle" | "submitting">("idle");
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [submitError, setSubmitError] = React.useState<string | null>(null);
+  const [scoutName, setScoutName] = React.useState<string>("Riley");
 
-  const form = useForm<ProfitPotentialFormValues>({
-    resolver: zodResolver(profitPotentialSchema),
+  const form = useForm<IntakeFormValues>({
+    resolver: zodResolver(intakeSchema),
     defaultValues: {
       trade: "",
       tradeOther: "",
@@ -111,11 +114,11 @@ export function AuditDialog({
 
   const selectedTrade = form.watch("trade");
 
-  /* Reset form each time the dialog opens */
   React.useEffect(() => {
     if (!open) return;
     setStatus("idle");
     setSubmitError(null);
+    setScoutName(SCOUT_NAMES[Math.floor(Math.random() * SCOUT_NAMES.length)]);
     form.reset({
       trade: "",
       tradeOther: "",
@@ -125,7 +128,7 @@ export function AuditDialog({
     });
   }, [defaultEmail, form, open]);
 
-  async function onSubmit(values: ProfitPotentialFormValues) {
+  async function onSubmit(values: IntakeFormValues) {
     setStatus("submitting");
     setSubmitError(null);
 
@@ -152,7 +155,9 @@ export function AuditDialog({
       form.reset();
     } catch (err) {
       console.error("[CraftForge] Network error:", err);
-      setSubmitError("Network error — please check your connection and try again.");
+      setSubmitError(
+        "Network error \u2014 please check your connection and try again."
+      );
     } finally {
       setStatus("idle");
     }
@@ -170,7 +175,6 @@ export function AuditDialog({
             "max-h-[90dvh] overflow-y-auto"
           )}
         >
-          {/* Close (×) button */}
           <DialogClose
             className={cn(
               "absolute right-4 top-4 z-10 rounded-lg p-1.5 text-slate-400 transition-colors",
@@ -186,12 +190,12 @@ export function AuditDialog({
           <div className="border-b border-white/10 px-6 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8">
             <DialogHeader className="space-y-3 text-left">
               <DialogTitle className="pr-8 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
-                Meet Max — Your Discovery Expert
+                Captain Knox here, brother.
               </DialogTitle>
               <DialogDescription className="text-[15px] leading-relaxed text-slate-400">
-                I love hearing about what you do and how you run your operation.
-                Tell me a bit about your trade and I&apos;ll start building your
-                custom path forward.
+                I just assigned you Scout {scoutName} &mdash; your Discovery
+                Expert today. Tell him what you do and we&apos;ll map your money
+                in 30 seconds.
               </DialogDescription>
             </DialogHeader>
           </div>
@@ -205,7 +209,7 @@ export function AuditDialog({
             {/* 1. Trade */}
             <div className="space-y-2">
               <Label
-                htmlFor="profit-trade"
+                htmlFor="intake-trade"
                 className="text-sm font-medium text-slate-200"
               >
                 Trade{" "}
@@ -214,7 +218,7 @@ export function AuditDialog({
                 </span>
               </Label>
               <select
-                id="profit-trade"
+                id="intake-trade"
                 className={selectClassName}
                 {...form.register("trade")}
                 aria-required="true"
@@ -235,12 +239,11 @@ export function AuditDialog({
                 </p>
               )}
 
-              {/* Conditional "Other" text field */}
               {selectedTrade === "Other" && (
                 <div className="mt-2 space-y-1">
                   <Input
-                    id="profit-trade-other"
-                    placeholder="Describe your trade…"
+                    id="intake-trade-other"
+                    placeholder="Describe your trade\u2026"
                     className="h-12 rounded-xl border-white/15 bg-[#0B1224]/90 text-base text-slate-100 placeholder:text-slate-500"
                     {...form.register("tradeOther")}
                     aria-required="true"
@@ -259,7 +262,7 @@ export function AuditDialog({
             {/* 2. City / Service Area */}
             <div className="space-y-2">
               <Label
-                htmlFor="profit-area"
+                htmlFor="intake-area"
                 className="text-sm font-medium text-slate-200"
               >
                 City / Service Area{" "}
@@ -268,17 +271,18 @@ export function AuditDialog({
                 </span>
               </Label>
               <Input
-                id="profit-area"
+                id="intake-area"
                 placeholder="e.g. Kansas City, Lawrence, or 50-mile radius around your shop"
                 autoComplete="address-level2"
                 className="h-12 rounded-xl border-white/15 bg-[#0B1224]/90 text-base text-slate-100 placeholder:text-slate-500"
                 {...form.register("serviceArea")}
                 aria-required="true"
                 aria-invalid={Boolean(form.formState.errors.serviceArea)}
-                aria-describedby="profit-area-hint"
+                aria-describedby="intake-area-hint"
               />
-              <p id="profit-area-hint" className="text-xs text-slate-500">
-                We&apos;ll use this to pull accurate local market data for your area.
+              <p id="intake-area-hint" className="text-xs text-slate-500">
+                We&apos;ll use this to pull accurate local market data for your
+                area.
               </p>
               {form.formState.errors.serviceArea && (
                 <p className="text-sm text-orange-300" role="alert">
@@ -290,7 +294,7 @@ export function AuditDialog({
             {/* 3. Rough Monthly Revenue */}
             <div className="space-y-2">
               <Label
-                htmlFor="profit-revenue"
+                htmlFor="intake-revenue"
                 className="text-sm font-medium text-slate-200"
               >
                 Rough Monthly Revenue{" "}
@@ -299,7 +303,7 @@ export function AuditDialog({
                 </span>
               </Label>
               <select
-                id="profit-revenue"
+                id="intake-revenue"
                 className={selectClassName}
                 {...form.register("monthlyRevenue")}
                 aria-required="true"
@@ -324,7 +328,7 @@ export function AuditDialog({
             {/* 4. Email */}
             <div className="space-y-2">
               <Label
-                htmlFor="profit-email"
+                htmlFor="intake-email"
                 className="text-sm font-medium text-slate-200"
               >
                 Email{" "}
@@ -333,7 +337,7 @@ export function AuditDialog({
                 </span>
               </Label>
               <Input
-                id="profit-email"
+                id="intake-email"
                 type="email"
                 placeholder="you@company.com"
                 autoComplete="email"
@@ -371,10 +375,10 @@ export function AuditDialog({
                       className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"
                       aria-hidden="true"
                     />
-                    Sending…
+                    Sending&hellip;
                   </span>
                 ) : (
-                  "Get My Free Blueprint"
+                  "Get My Free CraftForge Blueprint"
                 )}
               </Button>
             </DialogFooter>
@@ -391,7 +395,6 @@ export function AuditDialog({
           aria-labelledby="success-heading"
         >
           <div className="mx-auto w-full max-w-lg text-center">
-            {/* Checkmark */}
             <div className="mb-8 flex justify-center">
               <CheckCircle2
                 className="h-24 w-24 text-craftOrange drop-shadow-[0_0_24px_rgba(249,115,22,0.4)]"
@@ -400,34 +403,47 @@ export function AuditDialog({
               />
             </div>
 
-            {/* Headline */}
             <h2
               id="success-heading"
               className="mb-5 text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl"
             >
-              Thanks — Max here.
+              Your Blueprint is Ready.
             </h2>
 
-            {/* Body */}
-            <p className="mb-4 text-lg leading-relaxed text-slate-300 sm:text-xl">
-              I&apos;ve got your info. Our team is already analyzing everything.
-              You&apos;ll receive your personalized CraftForge Blueprint very
-              soon. You&apos;re in good hands.
+            {/* Blueprint preview snippet */}
+            <div className="mb-6 rounded-xl border border-craftOrange/20 bg-craftOrange/[0.06] px-5 py-4 text-left">
+              <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-craftOrange">
+                Blueprint Preview
+              </p>
+              <p className="text-sm leading-relaxed text-slate-200">
+                Market opportunity score, cost-saving targets, and revenue
+                growth recommendations &mdash; all visible on your dashboard.
+              </p>
+            </div>
+
+            <p className="mb-6 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Your Scout just delivered the full Blueprint. Titan Lead Brick is
+              ready to assign your crew. Check the Daily Crew Update banner on
+              your dashboard for today&apos;s top recommendation.
             </p>
 
-            {/* Crew line */}
-            <p className="mb-10 text-sm font-medium tracking-wide text-slate-400 sm:text-base">
-              You&apos;re now part of the CraftForge crew.
-            </p>
-
-            {/* CTA */}
-            <Button
-              size="lg"
-              className="h-12 rounded-xl bg-craftOrange px-8 text-base font-semibold text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
-              onClick={() => setShowSuccess(false)}
-            >
-              Back to homepage
-            </Button>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button
+                size="lg"
+                className="h-12 rounded-xl bg-craftOrange px-8 text-base font-semibold text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
+                onClick={() => setShowSuccess(false)}
+              >
+                Open My Dashboard Now
+              </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="h-12 rounded-xl border-white/15 bg-white/5 px-8 text-base hover:bg-white/10"
+                onClick={() => setShowSuccess(false)}
+              >
+                Back to homepage
+              </Button>
+            </div>
           </div>
         </div>
       )}

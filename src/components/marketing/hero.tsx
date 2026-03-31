@@ -17,14 +17,16 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/55 via-[#0F172A]/85 to-[#0F172A]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-20 sm:px-6 sm:pb-28 sm:pt-28 lg:pb-36 lg:pt-36">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-24 sm:px-6 sm:pb-32 sm:pt-32 lg:pb-40 lg:pt-40">
+        <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-slate-50 sm:text-6xl lg:text-7xl">
             Your Craft. Your Control.
           </h1>
 
           <p className="mt-7 text-lg leading-relaxed text-slate-300 sm:mt-8 sm:text-xl">
-            We handle the business side. You focus on your craft. We got this.
+            Your AI-powered digital crew quietly optimizes the entire back end
+            of your trade business so you can stay focused on your craft and
+            whatever matters most to you.
           </p>
 
           <div className="mt-10">
@@ -34,12 +36,12 @@ export function Hero() {
                   size="lg"
                   className="bg-craftOrange text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
                 >
-                  Get My Free Blueprint
+                  Get My Free CraftForge Blueprint
                 </Button>
               }
             />
             <p className="mt-5 text-sm text-slate-400">
-              No uploads. No spreadsheets. No hassle.
+              Takes 30 seconds. No credit card. No commitment.
             </p>
           </div>
         </div>
@@ -47,4 +49,3 @@ export function Hero() {
     </section>
   );
 }
-
