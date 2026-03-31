@@ -200,7 +200,7 @@ function buildEmailHtml(data: SubmitFormBody): string {
               </p>
               <p style="margin:0;color:#1E293B;font-family:${FONT};font-size:12px;">
                 <a href="https://genaistores.com"
-                   style="color:#334155;text-decoration:underline;">genaistores.com</a>
+                   style="color:#334155;text-decoration:underline;">Genaistores.com</a>
                 &nbsp;&middot;&nbsp;
                 &copy; ${year} CraftForge by Genaistores. All rights reserved.
               </p>

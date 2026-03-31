@@ -433,7 +433,7 @@ export function AuditDialog({
                 className="h-12 rounded-xl bg-craftOrange px-8 text-base font-semibold text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
                 onClick={() => setShowSuccess(false)}
               >
-                Open My Dashboard Now
+                View My Blueprint on the Dashboard
               </Button>
               <Button
                 variant="secondary"
