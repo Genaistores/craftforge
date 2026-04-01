@@ -29,17 +29,17 @@ export function YourDayTomorrow() {
       </div>
 
       {/* Comparison grid */}
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
+      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
         {/* Before */}
-        <div className="rounded-2xl border border-white/[0.06] bg-[#0F1A2E] p-6 sm:p-8">
-          <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
+        <div className="rounded-2xl border border-white/[0.06] bg-[#0F1A2E] p-7 sm:p-8">
+          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500 sm:mb-5">
             Before CraftForge
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-5 sm:space-y-4">
             {BEFORE.map((b) => (
               <li
                 key={b}
-                className="flex gap-3 text-base leading-relaxed text-slate-400 sm:text-[15px] sm:leading-[1.7]"
+                className="flex gap-3 text-base leading-[1.8] text-slate-400 sm:text-[15px] sm:leading-[1.7]"
               >
                 <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-600" />
                 {b}
@@ -49,15 +49,15 @@ export function YourDayTomorrow() {
         </div>
 
         {/* After */}
-        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-6 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
-          <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.14em] text-craftOrange">
+        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-7 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
+          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.14em] text-craftOrange sm:mb-5">
             With Your Crew
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-5 sm:space-y-4">
             {AFTER.map((a) => (
               <li
                 key={a}
-                className="flex gap-3 text-base leading-relaxed text-slate-200 sm:text-[15px] sm:leading-[1.7]"
+                className="flex gap-3 text-base leading-[1.8] text-slate-200 sm:text-[15px] sm:leading-[1.7]"
               >
                 <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-craftOrange/70" />
                 {a}
@@ -68,7 +68,7 @@ export function YourDayTomorrow() {
       </div>
 
       {/* CTA */}
-      <div className="mt-14 text-center">
+      <div className="mt-16 text-center sm:mt-14">
         <AuditDialog
           trigger={
             <Button
