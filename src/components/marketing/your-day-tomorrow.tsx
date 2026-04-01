@@ -17,21 +17,21 @@ export function YourDayTomorrow() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
       {/* Divider */}
-      <div className="mb-20 flex justify-center">
+      <div className="mb-14 flex justify-center sm:mb-20">
         <span className="h-px w-16 bg-white/10" aria-hidden="true" />
       </div>
 
       {/* Heading */}
-      <div className="mx-auto mb-20 max-w-2xl text-center">
+      <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
         <h2 className="text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
           Your Day Tomorrow
         </h2>
       </div>
 
       {/* Comparison grid */}
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
+      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8">
         {/* Before */}
-        <div className="rounded-2xl border border-white/[0.06] bg-[#0F1A2E] p-7 sm:p-8">
+        <div className="rounded-2xl border border-white/[0.06] bg-[#0F1A2E] p-6 sm:p-8">
           <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.14em] text-slate-500">
             Before CraftForge
           </p>
@@ -39,7 +39,7 @@ export function YourDayTomorrow() {
             {BEFORE.map((b) => (
               <li
                 key={b}
-                className="flex gap-3 text-[15px] leading-[1.7] text-slate-400"
+                className="flex gap-3 text-base leading-relaxed text-slate-400 sm:text-[15px] sm:leading-[1.7]"
               >
                 <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-600" />
                 {b}
@@ -49,7 +49,7 @@ export function YourDayTomorrow() {
         </div>
 
         {/* After */}
-        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-7 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
+        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-6 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
           <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.14em] text-craftOrange">
             With Your Crew
           </p>
@@ -57,7 +57,7 @@ export function YourDayTomorrow() {
             {AFTER.map((a) => (
               <li
                 key={a}
-                className="flex gap-3 text-[15px] leading-[1.7] text-slate-200"
+                className="flex gap-3 text-base leading-relaxed text-slate-200 sm:text-[15px] sm:leading-[1.7]"
               >
                 <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-craftOrange/70" />
                 {a}
@@ -73,7 +73,7 @@ export function YourDayTomorrow() {
           trigger={
             <Button
               size="lg"
-              className="h-13 bg-craftOrange px-8 text-base font-semibold text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
+              className="min-h-[52px] w-full bg-craftOrange px-8 text-base font-semibold text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90 sm:w-auto"
             >
               Get My Free CraftForge Blueprint &mdash; Takes 30 Seconds
             </Button>

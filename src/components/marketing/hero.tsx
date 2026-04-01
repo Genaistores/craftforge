@@ -29,12 +29,12 @@ export function Hero() {
             whatever matters most to you.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 sm:mt-10">
             <AuditDialog
               trigger={
                 <Button
                   size="lg"
-                  className="bg-craftOrange text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
+                  className="min-h-[52px] w-full bg-craftOrange text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90 sm:w-auto"
                 >
                   Get My Free CraftForge Blueprint
                 </Button>

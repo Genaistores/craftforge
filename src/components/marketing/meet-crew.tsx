@@ -147,11 +147,11 @@ export function MeetCrew() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
       {/* Divider */}
-      <div className="mb-20 flex justify-center">
+      <div className="mb-14 flex justify-center sm:mb-20">
         <span className="h-px w-16 bg-white/10" aria-hidden="true" />
       </div>
 
-      <div className="mx-auto mb-20 max-w-2xl text-center">
+      <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-20">
         <h2 className="text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
           Meet Your Crew
         </h2>
@@ -162,14 +162,14 @@ export function MeetCrew() {
       </div>
 
       {/* Grid — 4 columns on lg, 2 on sm */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4">
         {CREW.map((c) => (
           <button
             key={c.name}
             type="button"
             onClick={() => setSelected(c)}
             className={cn(
-              "group relative flex flex-col items-start rounded-2xl border bg-[#0F1A2E] p-5 text-left transition-all duration-200 sm:p-6",
+              "group relative flex flex-col items-start rounded-2xl border bg-[#0F1A2E] p-4 text-left transition-all duration-200 sm:p-6",
               "hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(2,8,23,0.5)]",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-craftOrange",
               c.team === "scout"
@@ -198,7 +198,7 @@ export function MeetCrew() {
             </p>
 
             {/* One-liner */}
-            <p className="mt-3 text-sm leading-relaxed text-slate-300">
+            <p className="mt-2 text-[13px] leading-relaxed text-slate-300 sm:mt-3 sm:text-sm">
               {c.oneLiner}
             </p>
           </button>
@@ -340,7 +340,7 @@ export function MeetCrew() {
           trigger={
             <Button
               size="lg"
-              className="bg-craftOrange text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90"
+              className="min-h-[52px] w-full bg-craftOrange text-white shadow-lg shadow-craftOrange/20 hover:bg-craftOrange/90 sm:w-auto"
             >
               Get My Free CraftForge Blueprint
             </Button>
