@@ -32,7 +32,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <AuditDialog
             trigger={
-              <Button className="h-9 bg-craftOrange px-3.5 text-[13px] text-white hover:bg-craftOrange/90 sm:h-10 sm:px-5 sm:text-sm">
+              <Button className="h-8 bg-craftOrange px-2.5 text-xs text-white hover:bg-craftOrange/90 sm:h-10 sm:px-5 sm:text-sm">
                 Get My Free CraftForge Blueprint
               </Button>
             }
