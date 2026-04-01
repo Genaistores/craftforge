@@ -49,15 +49,15 @@ export function YourDayTomorrow() {
         </div>
 
         {/* After */}
-        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-7 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
-          <p className="mb-6 text-[11px] font-bold uppercase tracking-[0.14em] text-craftOrange sm:mb-5">
+        <div className="rounded-2xl border border-craftOrange/20 bg-[#0F1A2E] p-8 shadow-[0_0_40px_rgba(249,115,22,0.06)] sm:p-8">
+          <p className="mb-7 text-[11px] font-bold uppercase tracking-[0.14em] text-craftOrange sm:mb-5">
             With Your Crew
           </p>
-          <ul className="space-y-5 sm:space-y-4">
+          <ul className="space-y-6 sm:space-y-4">
             {AFTER.map((a) => (
               <li
                 key={a}
-                className="flex gap-3 text-base leading-[1.8] text-slate-200 sm:text-[15px] sm:leading-[1.7]"
+                className="flex gap-3 text-base leading-[1.85] text-slate-200 sm:text-[15px] sm:leading-[1.7]"
               >
                 <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-craftOrange/70" />
                 {a}
